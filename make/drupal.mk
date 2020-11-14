@@ -19,6 +19,7 @@ DRUSH_RSYNC_MODE ?= Pakzu
 DRUSH_RSYNC_OPTS ?=  -- --omit-dir-times --no-perms --no-group --no-owner --chmod=ugo=rwX
 DRUSH_RSYNC_EXCLUDE ?= css:ctools:js:php:tmp:tmp_php
 SYNC_TARGETS += drush-sync
+LINT_IMG_PHP := druidfi/drupal-qa:$(DRUPAL_VERSION)
 LINT_PATHS_JS += ./$(WEBROOT)/modules/custom/*/js
 LINT_PATHS_JS += ./$(WEBROOT)/themes/custom/*/js
 LINT_PATHS_PHP += -v $(CURDIR)/drush:/app/drush:rw,consistent

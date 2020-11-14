@@ -7,6 +7,8 @@ WP_SQL_READY := yes
 DUMP_SQL_FILENAME := wordpress.sql
 DUMP_SQL_EXISTS := $(shell test -f $(DUMP_SQL_FILENAME) && echo yes || echo no)
 SYNC_TARGETS += wp-sync-db wp-sync-files
+LINT_IMG_PHP := druidfi/qa:wordpress
+LINT_PATHS_PHP += -v $(CURDIR)/src:/app/src:rw,consistent
 
 PHONY += fresh
 fresh: ## Build fresh development environment

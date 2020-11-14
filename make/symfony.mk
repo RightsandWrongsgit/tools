@@ -1,4 +1,7 @@
 SF_FRESH_TARGETS := up build sf-about
+LINT_IMG_PHP := druidfi/qa:symfony
+LINT_PATHS_PHP += -v $(CURDIR)/src:/app/src:rw,consistent
+LINT_PATHS_PHP += -v $(CURDIR)/tests:/app/tests:rw,consistent
 
 PHONY += sf-about
 sf-about: ## Displays information about the current project
